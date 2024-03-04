@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --button-span: #3C2C5B;
+  }
+}
+@layer utilities {
+  .bg-header {
+    @apply bg-[url('./images/collection-background.svg')] bg-no-repeat  bg-cover 
+  }
+}
+.cards {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.ball {
+
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+      transform: translate3d(0, 0, 0);
+  }
+  to {
+      transform: translate3d(0, 100px, 0);
+  }
+}
+/* Prefix Support */
+
+ball {
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: cubic-bezier(
+  .5, 0.05, 1, .5);
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+  to {
+      -webkit-transform: translate3d(0, 200px, 0);
+      transform: translate3d(0, 200px, 0);
+  }
+}
