@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { ourProducts } from "../constants";
-type itempro = {
-  product:string,
-  index: number
-}
+
+type ProductItem = {
+  id: string;
+  img_url: string | string[];
+  star: string;
+  labetitulo: string;
+  price: string;
+};
+
+type ProductCardProps = {
+  product: ProductItem;
+  index: number;
+};
+
 export function Product() {
   return (
     <section className="mb-40 md:mb-64">
@@ -24,7 +34,7 @@ export function Product() {
   );
 }
 
-const ProductCard = ({ product, index }: itempro) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
   const isLast = index === ourProducts.length - 1;
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,3 +66,5 @@ const ProductCard = ({ product, index }: itempro) => {
     </div>
   );
 };
+
+export default Product;

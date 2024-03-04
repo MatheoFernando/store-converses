@@ -5,7 +5,7 @@ export function HeroSection() {
   const [imagemSelecionada, setImagemSelecionada] = useState(
     "./images/big-shoe1.png"
   );
-  const handleClick = (url) => {
+  const handleClick = (url:string) => {
     setImagemSelecionada(url);
   };
 

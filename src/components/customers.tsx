@@ -1,4 +1,3 @@
-import React from "react";
 import { CustomersSay } from "../constants";
 
 export function Customers() {
